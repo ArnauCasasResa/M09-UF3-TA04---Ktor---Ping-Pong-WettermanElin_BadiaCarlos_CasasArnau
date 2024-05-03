@@ -23,6 +23,9 @@ repositories {
 }
 
 dependencies {
+    implementation("io.ktor:ktor-client-core:1.6.10")
+    implementation("io.ktor:ktor-client-cio:1.6.10")
+    implementation("io.ktor:ktor-client-json:1.6.10")
     implementation("io.ktor:ktor-server-core-jvm")
     implementation("io.ktor:ktor-server-netty-jvm")
     implementation("ch.qos.logback:logback-classic:$logback_version")
