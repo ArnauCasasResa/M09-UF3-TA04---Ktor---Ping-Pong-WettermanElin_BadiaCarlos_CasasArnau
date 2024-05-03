@@ -9,18 +9,19 @@ import io.ktor.server.netty.*
 
 fun main() {
     val server = embeddedServer(Netty, port = 8080) {
-
+    var mensaje="Hola Mundo!"
 
         routing {
             post("/message") {
                 // Manejador para la solicitud POST
                 val message = call.receive<String>()
+                mensaje=message
                 call.respondText("Mensaje recibido: $message")
             }
 
             get("/message") {
                 // Manejador para la solicitud GET
-                call.respondText("Ping")
+                call.respondText(mensaje)
             }
         }
     }
